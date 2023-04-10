@@ -10,7 +10,8 @@ def login(request):
 def checkLogin(request):
     if request.POST.get('email',None)!=None:
         try:
-           
+            #print(request.POST.get('email',None))
+            #print(request.POST.get('password'))
             studentdata=StudentRegistration.objects.get(email= request.POST.get('email'))
             if studentdata.password == request.POST.get('password'):
                 return HttpResponse("Login Successfull !!")
